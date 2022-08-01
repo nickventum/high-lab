@@ -1,0 +1,34 @@
+{
+  "name": "@high-lab/dynamic-table",
+  "version": "0.0.31",
+  "peerDependencies": {
+    "@angular/common": "^12.0.5",
+    "@angular/core": "^12.0.5",
+    "@angular/material": "^12.2.13",
+    "@high-lab/core": "0.0.7",
+    "@high-lab/strict-model": "0.0.3"
+  },
+  "dependencies": {
+    "tslib": "^2.1.0"
+  },
+  "module": "fesm2015/high-lab-dynamic-table.mjs",
+  "es2020": "fesm2020/high-lab-dynamic-table.mjs",
+  "esm2020": "esm2020/high-lab-dynamic-table.mjs",
+  "fesm2020": "fesm2020/high-lab-dynamic-table.mjs",
+  "fesm2015": "fesm2015/high-lab-dynamic-table.mjs",
+  "typings": "high-lab-dynamic-table.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./high-lab-dynamic-table.d.ts",
+      "esm2020": "./esm2020/high-lab-dynamic-table.mjs",
+      "es2020": "./fesm2020/high-lab-dynamic-table.mjs",
+      "es2015": "./fesm2015/high-lab-dynamic-table.mjs",
+      "node": "./fesm2015/high-lab-dynamic-table.mjs",
+      "default": "./fesm2020/high-lab-dynamic-table.mjs"
+    }
+  },
+  "sideEffects": false
+}

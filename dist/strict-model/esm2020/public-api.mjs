@@ -1,0 +1,5 @@
+/*
+ * Public API Surface of strict-model
+ */
+export * from './lib/strict-model';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3Byb2plY3RzL3N0cmljdC1tb2RlbC9zcmMvcHVibGljLWFwaS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7R0FFRztBQUVILGNBQWMsb0JBQW9CLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyIvKlxyXG4gKiBQdWJsaWMgQVBJIFN1cmZhY2Ugb2Ygc3RyaWN0LW1vZGVsXHJcbiAqL1xyXG5cclxuZXhwb3J0ICogZnJvbSAnLi9saWIvc3RyaWN0LW1vZGVsJztcclxuIl19

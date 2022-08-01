@@ -1,0 +1,36 @@
+{
+  "name": "@high-lab/dynamic-form",
+  "version": "0.3.19",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MichaelKravchuk/high-lab.git"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": "~13.3.10",
+    "@angular/core": "~13.3.10"
+  },
+  "dependencies": {
+    "tslib": "^2.1.0"
+  },
+  "module": "fesm2015/high-lab-dynamic-form.mjs",
+  "es2020": "fesm2020/high-lab-dynamic-form.mjs",
+  "esm2020": "esm2020/high-lab-dynamic-form.mjs",
+  "fesm2020": "fesm2020/high-lab-dynamic-form.mjs",
+  "fesm2015": "fesm2015/high-lab-dynamic-form.mjs",
+  "typings": "high-lab-dynamic-form.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./high-lab-dynamic-form.d.ts",
+      "esm2020": "./esm2020/high-lab-dynamic-form.mjs",
+      "es2020": "./fesm2020/high-lab-dynamic-form.mjs",
+      "es2015": "./fesm2015/high-lab-dynamic-form.mjs",
+      "node": "./fesm2015/high-lab-dynamic-form.mjs",
+      "default": "./fesm2020/high-lab-dynamic-form.mjs"
+    }
+  },
+  "sideEffects": false
+}

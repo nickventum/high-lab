@@ -1,0 +1,31 @@
+{
+  "name": "@high-lab/core",
+  "version": "0.0.8",
+  "peerDependencies": {
+    "@angular/common": "~13.3.10",
+    "@angular/core": "~13.3.10"
+  },
+  "dependencies": {
+    "tslib": "^2.1.0"
+  },
+  "module": "fesm2015/high-lab-core.mjs",
+  "es2020": "fesm2020/high-lab-core.mjs",
+  "esm2020": "esm2020/high-lab-core.mjs",
+  "fesm2020": "fesm2020/high-lab-core.mjs",
+  "fesm2015": "fesm2015/high-lab-core.mjs",
+  "typings": "high-lab-core.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./high-lab-core.d.ts",
+      "esm2020": "./esm2020/high-lab-core.mjs",
+      "es2020": "./fesm2020/high-lab-core.mjs",
+      "es2015": "./fesm2015/high-lab-core.mjs",
+      "node": "./fesm2015/high-lab-core.mjs",
+      "default": "./fesm2020/high-lab-core.mjs"
+    }
+  },
+  "sideEffects": false
+}

@@ -1,0 +1,39 @@
+import { Component, Inject, Input } from '@angular/core';
+import { DYNAMIC_FORM_VALIDATION_MESSAGES } from './injectors';
+import * as i0 from "@angular/core";
+import * as i1 from "@angular/forms";
+import * as i2 from "@angular/common";
+import * as i3 from "./dynamic-field.directive";
+export class DynamicFormComponent {
+    constructor(validationMessages) {
+        this.validationMessages = validationMessages;
+        this.componentsByConfig = new Map();
+        this.templates = {};
+    }
+    ngOnChanges(changes) {
+        if (changes.form && changes.form.currentValue) {
+            const root = changes.form.currentValue.root;
+            root.defaultValidationMessages = this.validationMessages();
+        }
+    }
+    getTemplate(key) {
+        return this.templates[key];
+    }
+    trackByKeyFn(index, control) {
+        return control.id;
+    }
+}
+DynamicFormComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.3.11", ngImport: i0, type: DynamicFormComponent, deps: [{ token: DYNAMIC_FORM_VALIDATION_MESSAGES }], target: i0.ɵɵFactoryTarget.Component });
+DynamicFormComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.3.11", type: DynamicFormComponent, selector: "dynamic-form", inputs: { form: "form", templates: "templates" }, usesOnChanges: true, ngImport: i0, template: "<form novalidate [formGroup]=\"form\">\r\n    <ng-content select=\"[formHeader]\"></ng-content>\r\n\r\n    <ng-container *ngFor=\"let control of form.childrenControls; trackBy: trackByKeyFn\"\r\n                  dynamicField\r\n                  [fieldConfig]=\"control.fieldConfig\"\r\n                  [formGroup]=\"form\"\r\n                  [template]=\"getTemplate(control.fieldConfig.key)\"\r\n    ></ng-container>\r\n\r\n    <ng-content select=\"[formFooter]\"></ng-content>\r\n</form>\r\n\r\n", styles: [":host{display:block;width:100%}form{width:100%;height:100%}\n"], directives: [{ type: i1.ɵNgNoValidate, selector: "form:not([ngNoForm]):not([ngNativeValidate])" }, { type: i1.NgControlStatusGroup, selector: "[formGroupName],[formArrayName],[ngModelGroup],[formGroup],form:not([ngNoForm]),[ngForm]" }, { type: i1.FormGroupDirective, selector: "[formGroup]", inputs: ["formGroup"], outputs: ["ngSubmit"], exportAs: ["ngForm"] }, { type: i2.NgForOf, selector: "[ngFor][ngForOf]", inputs: ["ngForOf", "ngForTrackBy", "ngForTemplate"] }, { type: i3.DynamicFieldDirective, selector: "[dynamicField]", inputs: ["fieldConfig", "formGroup", "template", "rowIndex"] }] });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.3.11", ngImport: i0, type: DynamicFormComponent, decorators: [{
+            type: Component,
+            args: [{ selector: 'dynamic-form', template: "<form novalidate [formGroup]=\"form\">\r\n    <ng-content select=\"[formHeader]\"></ng-content>\r\n\r\n    <ng-container *ngFor=\"let control of form.childrenControls; trackBy: trackByKeyFn\"\r\n                  dynamicField\r\n                  [fieldConfig]=\"control.fieldConfig\"\r\n                  [formGroup]=\"form\"\r\n                  [template]=\"getTemplate(control.fieldConfig.key)\"\r\n    ></ng-container>\r\n\r\n    <ng-content select=\"[formFooter]\"></ng-content>\r\n</form>\r\n\r\n", styles: [":host{display:block;width:100%}form{width:100%;height:100%}\n"] }]
+        }], ctorParameters: function () { return [{ type: undefined, decorators: [{
+                    type: Inject,
+                    args: [DYNAMIC_FORM_VALIDATION_MESSAGES]
+                }] }]; }, propDecorators: { form: [{
+                type: Input
+            }], templates: [{
+                type: Input
+            }] } });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZHluYW1pYy1mb3JtLmNvbXBvbmVudC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3Byb2plY3RzL2R5bmFtaWMtZm9ybS9zcmMvbGliL2R5bmFtaWMtZm9ybS5jb21wb25lbnQudHMiLCIuLi8uLi8uLi8uLi9wcm9qZWN0cy9keW5hbWljLWZvcm0vc3JjL2xpYi9keW5hbWljLWZvcm0uY29tcG9uZW50Lmh0bWwiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLFNBQVMsRUFBRSxNQUFNLEVBQUUsS0FBSyxFQUE0QixNQUFNLGVBQWUsQ0FBQztBQUduRixPQUFPLEVBQUUsZ0NBQWdDLEVBQUUsTUFBTSxhQUFhLENBQUM7Ozs7O0FBUS9ELE1BQU0sT0FBTyxvQkFBb0I7SUFTL0IsWUFDNkIsa0JBQXdDO1FBQXhDLHVCQUFrQixHQUFsQixrQkFBa0IsQ0FBc0I7UUFUckQsdUJBQWtCLEdBQUcsSUFBSSxHQUFHLEVBQXFCLENBQUM7UUFNM0QsY0FBUyxHQUF3QixFQUFFLENBQUM7SUFLM0MsQ0FBQztJQUVNLFdBQVcsQ0FBQyxPQUFzQjtRQUN2QyxJQUFJLE9BQU8sQ0FBQyxJQUFJLElBQUksT0FBTyxDQUFDLElBQUksQ0FBQyxZQUFZLEVBQUU7WUFDN0MsTUFBTSxJQUFJLEdBQUcsT0FBTyxDQUFDLElBQUksQ0FBQyxZQUFZLENBQUMsSUFBeUIsQ0FBQztZQUNqRSxJQUFJLENBQUMseUJBQXlCLEdBQUcsSUFBSSxDQUFDLGtCQUFrQixFQUFFLENBQUM7U0FDNUQ7SUFDSCxDQUFDO0lBRU0sV0FBVyxDQUFDLEdBQVc7UUFDNUIsT0FBTyxJQUFJLENBQUMsU0FBUyxDQUFDLEdBQUcsQ0FBQyxDQUFDO0lBQzdCLENBQUM7SUFFTSxZQUFZLENBQUMsS0FBYSxFQUFFLE9BQXlCO1FBQzFELE9BQU8sT0FBTyxDQUFDLEVBQUUsQ0FBQztJQUNwQixDQUFDOztrSEEzQlUsb0JBQW9CLGtCQVNYLGdDQUFnQztzR0FUekMsb0JBQW9CLDJIQ1hqQyx5ZkFhQTs0RkRGYSxvQkFBb0I7a0JBTGhDLFNBQVM7K0JBQ0UsY0FBYzs7MEJBYVgsTUFBTTsyQkFBQyxnQ0FBZ0M7NENBTDdDLElBQUk7c0JBRFYsS0FBSztnQkFJQyxTQUFTO3NCQURmLEtBQUsiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb21wb25lbnQsIEluamVjdCwgSW5wdXQsIE9uQ2hhbmdlcywgU2ltcGxlQ2hhbmdlcyB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xyXG5pbXBvcnQgeyBOZXdDb21wb25lbnQsIFZhbGlkYXRpb25NZXNzYWdlc0ZuIH0gZnJvbSAnLi9keW5hbWljLWZvcm0uY29uZmlnJztcclxuaW1wb3J0IHsgRXh0ZW5kZWRDb250cm9scywgRXh0ZW5kZWRGb3JtR3JvdXAgfSBmcm9tICcuL2Zvcm0tY29udHJvbHMnO1xyXG5pbXBvcnQgeyBEWU5BTUlDX0ZPUk1fVkFMSURBVElPTl9NRVNTQUdFUyB9IGZyb20gJy4vaW5qZWN0b3JzJztcclxuaW1wb3J0IHsgRHluYW1pY0Zvcm1UZW1wbGF0ZSB9IGZyb20gJy4vaW50ZXJmYWNlcyc7XHJcblxyXG5AQ29tcG9uZW50KHtcclxuICBzZWxlY3RvcjogJ2R5bmFtaWMtZm9ybScsXHJcbiAgdGVtcGxhdGVVcmw6ICcuL2R5bmFtaWMtZm9ybS5jb21wb25lbnQuaHRtbCcsXHJcbiAgc3R5bGVVcmxzOiBbJy4vZHluYW1pYy1mb3JtLmNvbXBvbmVudC5zY3NzJ10sXHJcbn0pXHJcbmV4cG9ydCBjbGFzcyBEeW5hbWljRm9ybUNvbXBvbmVudCBpbXBsZW1lbnRzIE9uQ2hhbmdlcyB7XHJcbiAgcHVibGljIHJlYWRvbmx5IGNvbXBvbmVudHNCeUNvbmZpZyA9IG5ldyBNYXA8YW55LCBOZXdDb21wb25lbnQ+KCk7XHJcblxyXG4gIEBJbnB1dCgpXHJcbiAgcHVibGljIGZvcm0hOiBFeHRlbmRlZEZvcm1Hcm91cDtcclxuXHJcbiAgQElucHV0KClcclxuICBwdWJsaWMgdGVtcGxhdGVzOiBEeW5hbWljRm9ybVRlbXBsYXRlID0ge307XHJcblxyXG4gIGNvbnN0cnVjdG9yKEBJbmplY3QoRFlOQU1JQ19GT1JNX1ZBTElEQVRJT05fTUVTU0FHRVMpXHJcbiAgICAgICAgICAgICAgcHJpdmF0ZSByZWFkb25seSB2YWxpZGF0aW9uTWVzc2FnZXM6IFZhbGlkYXRpb25NZXNzYWdlc0ZuXHJcbiAgKSB7XHJcbiAgfVxyXG5cclxuICBwdWJsaWMgbmdPbkNoYW5nZXMoY2hhbmdlczogU2ltcGxlQ2hhbmdlcykge1xyXG4gICAgaWYgKGNoYW5nZXMuZm9ybSAmJiBjaGFuZ2VzLmZvcm0uY3VycmVudFZhbHVlKSB7XHJcbiAgICAgIGNvbnN0IHJvb3QgPSBjaGFuZ2VzLmZvcm0uY3VycmVudFZhbHVlLnJvb3QgYXMgRXh0ZW5kZWRGb3JtR3JvdXA7XHJcbiAgICAgIHJvb3QuZGVmYXVsdFZhbGlkYXRpb25NZXNzYWdlcyA9IHRoaXMudmFsaWRhdGlvbk1lc3NhZ2VzKCk7XHJcbiAgICB9XHJcbiAgfVxyXG5cclxuICBwdWJsaWMgZ2V0VGVtcGxhdGUoa2V5OiBzdHJpbmcpOiBhbnkge1xyXG4gICAgcmV0dXJuIHRoaXMudGVtcGxhdGVzW2tleV07XHJcbiAgfVxyXG5cclxuICBwdWJsaWMgdHJhY2tCeUtleUZuKGluZGV4OiBudW1iZXIsIGNvbnRyb2w6IEV4dGVuZGVkQ29udHJvbHMpIHtcclxuICAgIHJldHVybiBjb250cm9sLmlkO1xyXG4gIH1cclxufVxyXG4iLCI8Zm9ybSBub3ZhbGlkYXRlIFtmb3JtR3JvdXBdPVwiZm9ybVwiPlxyXG4gICAgPG5nLWNvbnRlbnQgc2VsZWN0PVwiW2Zvcm1IZWFkZXJdXCI+PC9uZy1jb250ZW50PlxyXG5cclxuICAgIDxuZy1jb250YWluZXIgKm5nRm9yPVwibGV0IGNvbnRyb2wgb2YgZm9ybS5jaGlsZHJlbkNvbnRyb2xzOyB0cmFja0J5OiB0cmFja0J5S2V5Rm5cIlxyXG4gICAgICAgICAgICAgICAgICBkeW5hbWljRmllbGRcclxuICAgICAgICAgICAgICAgICAgW2ZpZWxkQ29uZmlnXT1cImNvbnRyb2wuZmllbGRDb25maWdcIlxyXG4gICAgICAgICAgICAgICAgICBbZm9ybUdyb3VwXT1cImZvcm1cIlxyXG4gICAgICAgICAgICAgICAgICBbdGVtcGxhdGVdPVwiZ2V0VGVtcGxhdGUoY29udHJvbC5maWVsZENvbmZpZy5rZXkpXCJcclxuICAgID48L25nLWNvbnRhaW5lcj5cclxuXHJcbiAgICA8bmctY29udGVudCBzZWxlY3Q9XCJbZm9ybUZvb3Rlcl1cIj48L25nLWNvbnRlbnQ+XHJcbjwvZm9ybT5cclxuXHJcbiJdfQ==

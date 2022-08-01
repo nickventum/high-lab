@@ -1,0 +1,12 @@
+/*
+ * Public API Surface of dynamic-table
+ */
+export * from './lib/dynamic-table.module';
+export * from './lib/dynamic-table.component';
+export * from './lib/dynamic-table-query-params.model';
+export * from './lib/data-table-cell.component';
+export * from './lib/table-cell';
+export * from './lib/data-table.config';
+export * from './lib/injectors';
+export * from './lib/interfaces';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3Byb2plY3RzL2R5bmFtaWMtdGFibGUvc3JjL3B1YmxpYy1hcGkudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0dBRUc7QUFHSCxjQUFjLDRCQUE0QixDQUFDO0FBQzNDLGNBQWMsK0JBQStCLENBQUM7QUFDOUMsY0FBYyx3Q0FBd0MsQ0FBQztBQUN2RCxjQUFjLGlDQUFpQyxDQUFDO0FBQ2hELGNBQWMsa0JBQWtCLENBQUM7QUFDakMsY0FBYyx5QkFBeUIsQ0FBQztBQUN4QyxjQUFjLGlCQUFpQixDQUFDO0FBQ2hDLGNBQWMsa0JBQWtCLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyIvKlxyXG4gKiBQdWJsaWMgQVBJIFN1cmZhY2Ugb2YgZHluYW1pYy10YWJsZVxyXG4gKi9cclxuXHJcblxyXG5leHBvcnQgKiBmcm9tICcuL2xpYi9keW5hbWljLXRhYmxlLm1vZHVsZSc7XHJcbmV4cG9ydCAqIGZyb20gJy4vbGliL2R5bmFtaWMtdGFibGUuY29tcG9uZW50JztcclxuZXhwb3J0ICogZnJvbSAnLi9saWIvZHluYW1pYy10YWJsZS1xdWVyeS1wYXJhbXMubW9kZWwnO1xyXG5leHBvcnQgKiBmcm9tICcuL2xpYi9kYXRhLXRhYmxlLWNlbGwuY29tcG9uZW50JztcclxuZXhwb3J0ICogZnJvbSAnLi9saWIvdGFibGUtY2VsbCc7XHJcbmV4cG9ydCAqIGZyb20gJy4vbGliL2RhdGEtdGFibGUuY29uZmlnJztcclxuZXhwb3J0ICogZnJvbSAnLi9saWIvaW5qZWN0b3JzJztcclxuZXhwb3J0ICogZnJvbSAnLi9saWIvaW50ZXJmYWNlcyc7XHJcblxyXG4iXX0=
